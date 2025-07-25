@@ -1,0 +1,106 @@
+/* CONSISTENT FOR EVERY PAGE */
+header {
+    display: block;
+    color: #041024;
+    margin: 60px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+h2 {
+    text-align: center;
+    padding-bottom: 60px;
+}
+h3 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+body {
+    display: block;
+    color: #041024;
+    background-color: #faf2f7;
+    /* margin: 60px; */
+}
+p {
+    font-size: 20px;
+}
+
+
+.btn-primary, .btn-primary:focus, .btn-primary:focus:active {
+  background-color: #9e73b4;
+  border-color: #9e73b4;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #b080c8;
+  border-color: #b080c8;
+}
+
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+/* GROUP BIO */
+.container-bio {
+    padding: 60px;
+    background-color: white;
+}
+
+
+/* VIDEO AND CONTACT US*/
+.center-box {
+    margin: 60px;
+    text-align: center;
+    display: block;
+
+}
+.center-box img {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.center-box video{
+    max-width: 80%;
+    justify-content: center;
+}
+
+
+
+/* DARK MODE STUFF */
+#themeButton 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+}
+
+
+
+.dark-mode {
+  background-color: #041024;
+  color: #faf2f7;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: #faf2f7;
+}
+
+.dark-mode .container-bio,
+.dark-mode .center-box {
+  background-color: #041024;
+}
+
+.dark-mode .contact {
+    fill: #faf2f7;
+}

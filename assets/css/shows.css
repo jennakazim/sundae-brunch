@@ -1,0 +1,131 @@
+/* CONSISTENT FOR EVERY PAGE */
+header {
+    display: block;
+    color: #041024;
+    margin: 60px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+h2 {
+    text-align: center;
+    padding-bottom: 60px;
+}
+h3 {
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+body {
+    display: block;
+    color: #041024;
+    background-color: #faf2f7;
+    /* margin: 60px; */
+}
+p {
+    font-size: 20px;
+}
+
+
+.btn-primary, .btn-primary:focus, .btn-primary:focus:active {
+  background-color: #9e73b4;
+  border-color: #9e73b4;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #b080c8;
+  border-color: #b080c8;
+}
+
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+
+
+.gallery-box {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+}
+.gallery-container img {
+    padding:15px;
+    width: auto; 
+    max-height: 400px;
+    object-fit: contain;
+}
+.gallery-container video {
+    padding:15px;
+    width: auto; 
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.pop-up-image {
+    position: fixed;
+    z-index: 999;
+    display: none;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.pop-up-image img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    padding-top: 60px;
+    display: block;
+    margin: auto;
+}
+
+
+/* DARK MODE STUFF */
+#themeButton 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+}
+
+
+
+.dark-mode {
+  background-color: #041024;
+  color: #faf2f7;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: #faf2f7;
+}
+
+.dark-mode .gallery-box{
+  background-color: #041024;
+}
+
+.dark-mode .contact {
+    fill: #faf2f7;
+}
