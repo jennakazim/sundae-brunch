@@ -43,6 +43,7 @@ for (var i = 0; i < images.length; i++) {
   images[i].addEventListener('keydown', handleKeyDown);
 }
 var popup = document.querySelector('.pop-up-image');
+
 popup.addEventListener('click', handleClick);
 document.addEventListener('keydown', handleKeyDown);
 
