@@ -1,35 +1,47 @@
-const nodemailer = require("nodemailer");
+const express = require('express');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
+const PORT = 3000;
+// so i don't leak my password :P
+require('dotenv').config();
 
-// Create a test account or replace with real credentials.
+app.use(cors());
+app.use(bodyParser.json());
+
+// Mkae the transporter!
 const transporter = nodemailer.createTransport({
-  host: "smtp.ethereal.email",
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  service: 'gmail',
   auth: {
-    user: "maddison53@ethereal.email",
-    pass: "jn7jnAPss4f63QBp6D",
-  },
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
 });
 
-// Wrap in an async IIFE so we can use await.
-(async () => {
-  const info = await transporter.sendMail({
-    from: '"Maddison Foo Koch" <maddison53@ethereal.email>',
-    to: "bar@example.com, baz@example.com",
-    subject: "Hello ✔",
-    text: "Hello world?", // plain‑text body
-    html: "<b>Hello world?</b>", // HTML body
+// Handle POST request from frontend
+app.post('/', (req, res) => {
+  const { email, subject, body } = req.body;
+
+  const mailOptions = {
+    from: email,
+    to: 'jennakazim2027@u.northwestern.edu',
+    subject: subject,
+    text: body
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email:", error);
+      return res.status(500).send("Error sending email.");
+    } else {
+      console.log('Email sent: ' + info.response);
+      return res.status(200).send("Email sent successfully.");
+    }
   });
+});
 
-  console.log("Message sent:", info.messageId);
-})();
-
-
-
-var submitButton = document.querySelector('.submit');
-
-function handleClick() {
-    console.log("Button clicked");
-}
-
-submitButton.addEventListener('click', handleClick);
+// !!!!START SERVER!!!!
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
